@@ -1,9 +1,18 @@
-import React, { useState } from "react";
-import { XYPlot, XAxis, YAxis, VerticalBarSeries } from "react-vis";
+import React, { useEffect, useState } from "react";
+import {
+  XYPlot,
+  XAxis,
+  YAxis,
+  VerticalBarSeries,
+  makeVisFlexible,
+} from "react-vis";
+import "./Graph.css";
 
 function Graph() {
   const [year, setYear] = useState([]);
   const [population, setPopulation] = useState([]);
+
+  const FlexibleXYPlot = makeVisFlexible(XYPlot);
 
   const apiUrl =
     "https://datausa.io/api/data?drilldowns=Nation&measures=Population";
@@ -20,7 +29,11 @@ function Graph() {
         })
       );
   };
-  makeRequest();
+
+  useEffect(() => {
+    makeRequest();
+  }, []);
+
   const data = [
     { x: 0, y: 8 },
     { x: 1, y: 5 },
@@ -34,11 +47,13 @@ function Graph() {
     { x: 9, y: 0 },
   ];
   return (
-    <XYPlot height={300} width={300} border={"2px solid black"}>
-      <VerticalBarSeries data={data} />
-      <XAxis />
-      <YAxis />
-    </XYPlot>
+    <div className="graph__container">
+      <FlexibleXYPlot className="graph__plot" border={"2px solid black"}>
+        <VerticalBarSeries data={data} />
+        <XAxis />
+        <YAxis />
+      </FlexibleXYPlot>
+    </div>
   );
 }
 

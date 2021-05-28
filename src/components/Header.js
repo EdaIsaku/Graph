@@ -4,18 +4,17 @@ import "./Header.css";
 function Header() {
   return (
     <div className="header">
-      <h1 className="header__title">Dashboard</h1>
       <div className="header__box">
-        <h5 className="header__box__title">New request</h5>
-        <p className="header__box__subtitle">Income</p>
+        <h2 className="header__box__title">$458.254</h2>
+        <p className="header__box__subtitle">Sales</p>
       </div>
       <div className="header__box">
-        <h5 className="header__box__title">New request</h5>
-        <p className="header__box__subtitle">Income</p>
+        <h2 className="header__box__title">$458.254</h2>
+        <p className="header__box__subtitle">Sales</p>
       </div>
       <div className="header__box">
-        <h5 className="header__box__title">New request</h5>
-        <p className="header__box__subtitle">Income</p>
+        <h2 className="header__box__title">$458.254</h2>
+        <p className="header__box__subtitle">Sales</p>
       </div>
     </div>
   );
