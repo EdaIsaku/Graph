@@ -1,0 +1,11 @@
+.radial__container {
+  height: 90%;
+  width: 49%;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 15px 2px #dad7eb;
+  box-shadow: 1px 1px 15px 2px #dad7eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

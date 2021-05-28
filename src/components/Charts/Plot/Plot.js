@@ -6,9 +6,9 @@ import {
   VerticalBarSeries,
   makeVisFlexible,
 } from "react-vis";
-import "./Graph.css";
+import "./Plot.css";
 
-function Graph() {
+function Plot() {
   const [year, setYear] = useState([]);
   const [population, setPopulation] = useState([]);
 
@@ -47,7 +47,7 @@ function Graph() {
     { x: 9, y: 0 },
   ];
   return (
-    <div className="graph__container">
+    <div className="plot__container">
       <FlexibleXYPlot className="graph__plot" border={"2px solid black"}>
         <VerticalBarSeries data={data} />
         <XAxis />
@@ -57,4 +57,4 @@ function Graph() {
   );
 }
 
-export default Graph;
+export default Plot;

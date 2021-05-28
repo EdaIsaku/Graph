@@ -1,0 +1,7 @@
+.plot__container {
+  height: 90%;
+  width: 49%;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 15px 2px #dad7eb;
+  box-shadow: 1px 1px 15px 2px #dad7eb;
+}
