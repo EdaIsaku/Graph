@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { XYPlot, XAxis, YAxis, VerticalBarSeries } from "react-vis";
+
 function Graph() {
   const [year, setYear] = useState([]);
   const [population, setPopulation] = useState([]);
+
   const apiUrl =
     "https://datausa.io/api/data?drilldowns=Nation&measures=Population";
+
   const makeRequest = () => {
     fetch(apiUrl)
       .then((res) => res.json())
@@ -13,6 +16,7 @@ function Graph() {
           setYear(item.Year);
           setPopulation(item.Population);
           console.log(year);
+          console.log(population);
         })
       );
   };

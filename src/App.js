@@ -1,10 +1,10 @@
 import "./App.css";
-import Graph from "./components/Graph";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
     <div className="App">
-      <Graph />
+      <Dashboard />
     </div>
   );
 }

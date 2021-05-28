@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__title {
+  text-align: initial;
+}
+
+.header__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
