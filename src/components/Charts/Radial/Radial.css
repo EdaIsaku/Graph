@@ -4,8 +4,10 @@
   background-color: #fff;
   -webkit-box-shadow: 1px 1px 15px 2px #dad7eb;
   box-shadow: 1px 1px 15px 2px #dad7eb;
+}
+
+.radial__container > div {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }

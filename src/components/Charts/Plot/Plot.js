@@ -1,57 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   XYPlot,
   XAxis,
   YAxis,
   VerticalBarSeries,
+  Hint,
   makeVisFlexible,
 } from "react-vis";
 import "./Plot.css";
 
-function Plot() {
-  const [year, setYear] = useState([]);
-  const [population, setPopulation] = useState([]);
-
+function Plot({ data, labelData }) {
   const FlexibleXYPlot = makeVisFlexible(XYPlot);
-
-  const apiUrl =
-    "https://datausa.io/api/data?drilldowns=Nation&measures=Population";
-
-  const makeRequest = () => {
-    fetch(apiUrl)
-      .then((res) => res.json())
-      .then((res) =>
-        res.data.map((item) => {
-          setYear(item.Year);
-          setPopulation(item.Population);
-          console.log(year);
-          console.log(population);
-        })
-      );
-  };
-
-  useEffect(() => {
-    makeRequest();
-  }, []);
-
-  const data = [
-    { x: 0, y: 8 },
-    { x: 1, y: 5 },
-    { x: 2, y: 4 },
-    { x: 3, y: 9 },
-    { x: 4, y: 1 },
-    { x: 5, y: 7 },
-    { x: 6, y: 6 },
-    { x: 7, y: 3 },
-    { x: 8, y: 2 },
-    { x: 9, y: 0 },
-  ];
   return (
     <div className="plot__container">
-      <FlexibleXYPlot className="graph__plot" border={"2px solid black"}>
-        <VerticalBarSeries data={data} />
-        <XAxis />
-        <YAxis />
+      <FlexibleXYPlot
+        className="graph__plot"
+        // margin={{ left: 100 }}
+        xType="ordinal"
+        color={"#64ffdb"}
+      >
+        <VerticalBarSeries data={data} barWidth={0.3} />
+        <XAxis
+          tickSize={0.1}
+          style={{
+            ticks: { stroke: "#ADDDE1" },
+            text: { stroke: "none", fill: "#6b6b76", fontWeight: 600 },
+            title: { fill: "#6b6b76", fontWeight: 500 },
+          }}
+        />
+        <YAxis
+          title="Population"
+          tickSize={0}
+          hideTicks
+          style={{
+            ticks: { stroke: "#ADDDE1" },
+            text: { stroke: "none", fill: "#6b6b76", fontWeight: 600 },
+            title: { fill: "#6b6b76", fontWeight: 600 },
+          }}
+        />
       </FlexibleXYPlot>
     </div>
   );
