@@ -12,7 +12,7 @@ function Header() {
           <p className="header__box__data__subtitle">Sales</p>
         </div>
         <div className="header__box__image">
-          <img className="header__box__image__src" src={imageGrey} />
+          <img className="header__box__image__src" src={imageGrey} alt="img" />
         </div>
       </div>
       <div className="header__box">
@@ -21,7 +21,7 @@ function Header() {
           <p className="header__box__data__subtitle">Sales</p>
         </div>
         <div className="header__box__image">
-          <img className="header__box__image__src" src={imageGrey} />
+          <img className="header__box__image__src" src={imageGrey} alt="img" />
         </div>
       </div>
       <div className="header__box">
@@ -30,7 +30,7 @@ function Header() {
           <p className="header__box__data__subtitle">Sales</p>
         </div>
         <div className="header__box__image">
-          <img className="header__box__image__src" src={image} />
+          <img className="header__box__image__src" src={image} alt="img" />
         </div>
       </div>
     </div>
