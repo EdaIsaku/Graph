@@ -22,3 +22,10 @@
   width: 95%;
   height: 68%;
 }
+
+.dashboard__container__graph__box {
+  width: 50%;
+  height: 100%;
+  -webkit-box-shadow: 1px 1px 15px 2px #dad7eb;
+  box-shadow: 1px 1px 15px 2px #dad7eb;
+}

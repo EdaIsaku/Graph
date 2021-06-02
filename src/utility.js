@@ -1,3 +1,4 @@
+//utility functions for Bar
 export const getDataForChart = (data) => {
   const keys = Object.keys(data);
   let maxCases = {
@@ -37,3 +38,49 @@ export const filterData = (data, filterId) => {
 
   return filtered;
 };
+
+//utility functions fro Line
+
+export const getDataForLineChart = (data) => {
+  const keys = Object.keys(data);
+  const myData = [];
+  const readyData = keys.slice(0, 9).map((el) => {
+    myData.push({
+      x: el,
+      y: data[el]["All"].confirmed,
+    });
+    return myData;
+  });
+  console.log(myData);
+  return [
+    {
+      id: "confirmed",
+      color: "red",
+      data: myData,
+    },
+  ];
+};
+
+// export const getDataForLineChart = (data) => {
+//   const keys = Object.keys(data);
+//   const myData = keys.slice(0, 9).map((el) => {
+//     const datas = {
+//       confirmed: {
+//         x: el,
+//         y: data[el]["All"].confirmed,
+//       },
+//       recovered: {
+//         x: el,
+//         y: data[el]["All"].recovered,
+//       },
+//       deaths: {
+//         x: el,
+//         y: data[el]["All"].deaths,
+//       },
+//     };
+//     return datas;
+//   });
+//   console.log(myData);
+
+//   const ids = ["deaths", "recovered", "cases"];
+//   const colors = ["black", "green", "red"];
